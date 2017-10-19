@@ -1,0 +1,19 @@
+{
+  "name": "hangman_cli",
+  "version": "1.0.0",
+  "description": "A hangman game that incorporates command line inputs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlfredoM1124/HangmanCLI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlfredoM1124/HangmanCLI/issues"
+  },
+  "homepage": "https://github.com/AlfredoM1124/HangmanCLI#readme"
+}
