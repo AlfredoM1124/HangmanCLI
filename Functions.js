@@ -33,7 +33,23 @@ var Word = function(solution){
 		}
 		this.revealCharacter();
 	};
-	// 
+	// Splits the characters in the word to enable game functionality
+	this.splitWord = function(){
+		for (var i = 0; i < this.solution.length; i++){
+			var character = this.solution.charAt(i);
+			var placeholder = "-";
+			// Display spaces on words if they exist
+			if (character === " ") {
+				placeholder = " ";
+				// Spaces do not have to be guessed.
+				this.characterCount -= 1;
+			};
+			var newLetter = new letterGen(character, placeholder);
+			this.letters.push(newLetter);
+		}
+		this.revealCharacter();
+	};
+	// Displays the chosen word in the Command Line
 	this.revealCharacter = function() {
 		this.reveal = "";
 		for (var i = 0; i < this.letters.length; i++) {
@@ -65,5 +81,5 @@ var Word = function(solution){
 	};
 
 
-
+module.exports = wordArray;
 module.exports = Word;
