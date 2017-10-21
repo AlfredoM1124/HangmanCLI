@@ -26,4 +26,23 @@ var startGame = function() {
 			startGame();
 		});
 	}
+	else if (counter === wordArray.words.length - 1){
+		console.log("You're all out of guesses! Better luck next time...");
+		return;
+	}
+	else {
+		// Initiates prompt with inquirer package
+		inquirer.prompt(["Play again???"]).then(function (answers){
+
+			if (answers === "yes"){
+				guesses = 7;
+				counter++;
+				word = new functions(wordArray.words[counter]);
+				word.splitWord();
+				startGame();
+			}
+		});
+	}
 }
+
+startGame();
