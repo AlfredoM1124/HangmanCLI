@@ -14,4 +14,16 @@ word.splitWord();
 
 inquirer.prompt();
 
+var startGame = function() {
+	if (guesses > 0 && word.characterCount > 0) {
 
+		console.log("Guesses remaining: " + guesses + "\nLetters remaining: " + word.characterCount);
+		// Uses inquirer to prompt user for respones
+		inquirer.prompt("guess", function(err, res){
+			var guessResult = word.letterGuess(res.guess);
+			guesses -= guessResult;
+			// Launch the game again
+			startGame();
+		});
+	}
+}
