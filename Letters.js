@@ -4,14 +4,21 @@
 
 var letterGen = function (character, placeholder){
 	this.letter = character;
-	this.reveal = placeholder;
+	this.placeholder = placeholder;
 };
 
 // Method that checks input letter from CLI 
 letterGen.prototype.check = function (guess){
-	if (guess === this.letter) {
-		this.reveal = guess;
+	if (guess === this.placeholder) {
+		return undefined;
+	}
+	else if (guess === this.letter) {
+		this.placeholder = guess;
+		return true;
 	};
+	else {
+		return false;
+	}
 };
 
 module.exports = letterGen;
